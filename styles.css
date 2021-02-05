@@ -1,0 +1,504 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 50px;
+    background-color: #f0e2ba;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+}
+
+.arduino-uno {
+    height: 280px;
+    width: 450px;
+    position: relative;
+}
+
+.connector-head {
+    width: 60px;
+    height: 32px;
+    position: absolute;
+    bottom: 24px;
+    left: -10px;
+    background: #bbb;
+    border-right: 8px solid #343434;
+}
+
+.connector-head::after {
+    content: "";
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    bottom: -6px;
+    left: -10px;
+    background: #343434;
+    border: 2px solid;
+    border-color:  #434343 #343434 #333 #343434;
+}
+
+.connector-base {
+    width: 40px;
+    height: 38px;
+    position: absolute;
+    bottom: 21px;
+    left: -50px;
+    background: #343434;
+    border: 3px solid;
+    border-color:  #434343 #343434 #333 #343434;
+}
+
+.connector-base::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -37px;
+    left: -19px;
+    background: #f0e2ba;
+    transform: rotateZ(165deg);
+}
+
+.connector-base::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 29px;
+    left: -19px;
+    background: #f0e2ba;
+    transform: rotateZ(195deg);
+}
+
+.cable {
+    width: 60px;
+    height: 20px;
+    position: absolute;
+    bottom: 30px;
+    left: -100px;
+    background: #343434;
+}
+
+.cable::after {
+    content: "";
+    width: 46px;
+    height: 2px;
+    position: absolute;
+    top: 9px;
+    background: #555;
+
+}
+
+.board {
+    height: 280px;
+    width: 350px;
+    border-radius: 5px;
+    position: relative;
+    left: 100px;
+    background: #008184;
+}
+
+.board-irregularity {
+    height: 200px;
+    width: 15px;
+    position: absolute;
+    right: -15px;
+    bottom: 15px;
+    background: #008184;
+}
+
+.board-irregularity::before {
+    content: "";
+    height: 15px;
+    width: 21px;
+    position: absolute;
+    top: -5px;
+    left: 2px;
+    transform: rotateZ(45deg);
+    background-color: #f0e2ba;
+}
+
+.board-irregularity::after {
+    content: "";
+    height: 15px;
+    width: 21px;
+    position: absolute;
+    bottom: -5px;
+    left: 2px;
+    transform: rotateZ(-45deg);
+    background-color: #f0e2ba;
+}
+
+.serial-port {
+    height: 80px;
+    width: 100px;
+    position: absolute;
+    left: -50px;
+    top: 50px;
+    border-left: 5px solid #dddddd;
+    background: #bbbbbb;
+}
+
+.power-in {
+    width: 60px;
+    height: 40px;
+    position: absolute;
+    bottom: 20px;
+    left: -20px;
+    background: #343434;
+    border: 2px solid;
+    border-color:  #434343 #343434 #333 #343434;
+}
+
+.power-in::after {
+    content: "";
+    width: 16px;
+    height: 44px;
+    position: absolute;
+    top: -7px;
+    left: -20px;
+    background: #343434;
+    border: 3px solid;
+    border-color:  #434343 #343434 #333 #343434;
+}
+
+.button {
+    height: 32px;
+    width: 32px;
+    background: #ddd;
+    position:absolute;
+}
+
+.button::after {
+    content: "";
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    border-radius: 8px;
+    background-color: #d88787;
+}
+
+.button.reset {
+    top: 7px;
+    left: 30px;
+}
+
+.transistor {
+    width: 25px;
+    height: 50px;
+    position: absolute;
+    bottom: 70px;
+    left: 50px;
+    background-color: #343434;
+    border: 2px solid;
+    border-color: #434343 #434343 #131313 #131313;
+}
+
+.transistor::before {
+    content: "";
+    width: 12px;
+    height: 24px;
+    position: absolute;
+    top: 11px; /* position - element border */
+    left: -14px;  /* size + element border */
+    background-color: #bbbbbb;
+}
+
+.transistor::after {
+    content: "";
+    width: 8px;
+    height: 6px;
+    position: absolute;
+    top: 2px; /* position - element border */
+    right: -10px; /* size - element border */
+    background-color: #bbb;
+    box-shadow: 0 18px #bbb, 0 36px #bbb;
+}
+
+.microprocessor {
+    height: 50px;
+    width: 180px;
+    position: absolute;
+    right: 10px;
+    bottom: 65px;
+    background: #343434;
+}
+
+.microprocessor::after {
+    content: "";
+    height: 4px;
+    width: 8px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    position: absolute;
+    top: -4px;
+    left: 8px;
+    background: #bbbbbb;
+    box-shadow: 12px 0px #bbbbbb,24px 0px #bbbbbb, 36px 0 #bbbbbb, 48px 0px #bbbbbb, 60px 0px #bbbbbb, 72px 0px #bbbbbb,84px 0 #bbbbbb,96px 0 #bbbbbb,108px 0 #bbbbbb,120px 0 #bbbbbb,132px 0 #bbbbbb,144px 0 #bbbbbb,156px 0 #bbbbbb;
+}
+
+.microprocessor::before {
+    content: "";
+    height: 4px;
+    width: 8px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    position: absolute;
+    bottom: -4px;
+    left: 8px;
+    background: #bbbbbb;
+    box-shadow: 12px 0px #bbbbbb,24px 0px #bbbbbb, 36px 0 #bbbbbb, 48px 0px #bbbbbb, 60px 0px #bbbbbb, 72px 0px #bbbbbb,84px 0 #bbbbbb,96px 0 #bbbbbb,108px 0 #bbbbbb,120px 0 #bbbbbb,132px 0 #bbbbbb,144px 0 #bbbbbb,156px 0 #bbbbbb;
+}
+
+.pin-row {
+    height: 14px;
+    background: #343434;
+}
+
+.pin-hole {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background-color: #232323;
+    border: 2px solid;
+    border-color: #333 #434343 #545454 #434343; 
+}
+
+.pin-hole.d16, .pin-hole.p2,.pin-hole.a2  {
+    left: 16px;
+}
+.pin-hole.d15, .pin-hole.p3, .pin-hole.a3 {
+    left: 30px;
+}
+.pin-hole.d14, .pin-hole.p4, .pin-hole.a4 {
+    left: 44px;
+}
+.pin-hole.d13, .pin-hole.p5, .pin-hole.a5 {
+    left: 58px;
+}
+.pin-hole.d12, .pin-hole.p6, .pin-hole.a6 {
+    left: 72px;
+}
+.pin-hole.d11, .pin-hole.p7 {
+    left: 86px;
+}
+.pin-hole.d10, .pin-hole.p8 {
+    left: 100px;
+}
+.pin-hole.d9 {
+    left: 114px;
+}
+.pin-hole.d8 {
+    left: 128px;
+}
+.pin-hole.d7 {
+    left: 156px;
+}
+.pin-hole.d6 {
+    left: 170px;
+}
+.pin-hole.d5 {
+    left: 184px;
+}
+.pin-hole.d4 {
+    left: 198px;
+}
+.pin-hole.d3 {
+    left: 212px;
+}
+.pin-hole.d2 {
+    left: 226px;
+}
+.pin-hole.d1 {
+    left: 240px;
+}
+.pin-hole.d0 {
+    left: 254px;
+}
+
+.digital.pin-row::after {
+    content: "\00000a \00000a \00000a \00000a 13 \00000a 12 \00000a ~11 \00000a ~10 \00000a ~9 \00000a 8 \00000a  \00000a 7 \00000a ~6 \00000a ~5 \00000a 4 \00000a ~3 \00000a 2 \00000a TX 1 \00000a RX 0 ";
+    position: absolute;
+    top: -107px;
+    left: 119px;
+    color: #fff;
+    font-size: 10px;
+    text-align: right;
+    transform: rotateZ(-90deg);
+    white-space: pre-wrap;
+    line-height: 14px;
+}
+
+.digital.pin-row {
+    width: 266px;
+    position: absolute;
+    top: 10px;
+    left: 74px;
+}
+
+.label {
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background-color: #fff;
+}
+
+.label::after {
+    content: "";
+    height: 1px;
+    position: absolute;
+    background: #fff;
+}
+
+.label span {
+    display: inline-block;
+    text-align: center;
+    background-color: #fff;
+    color: #008184;
+    font-size: 10px;
+}
+
+.digital.label {
+    width: 92px;
+    bottom: -35px;
+    left: 58px;
+}
+
+.digital.label::after {
+    width: 115px;
+    right: -115px;
+    bottom: 0;
+}
+
+.power.pin-row {
+    width: 112px;
+    position: absolute;
+    bottom: 10px;
+    left: 130px;
+}
+
+.power.pin-row::after {
+    content: "\00000a IOREF \00000a RESET \00000a 3.3V \00000a 5V \00000a \00000a \00000a Vin";
+    position: absolute;
+    top: -75px;
+    left: 40px;
+    color: #fff;
+    font-size: 10px;
+    text-align: left;
+    transform: rotateZ(-90deg);
+    white-space: pre-wrap;
+    line-height: 14px;
+    letter-spacing: -.5px;
+}
+
+.power.label {
+    width: 40px;
+    bottom: 35px;
+    left: 72px;
+}
+
+.power.label::after {
+    width: 28px;
+    left: -28px;
+    top: 0;
+}
+
+.analog.pin-row {
+    width: 84px;
+    position: absolute;
+    bottom: 10px;
+    left: 256px;
+}
+
+.analog.pin-row::after {
+    content: "A5 \00000a A4 \00000a A3 \00000a A2 \00000a A1 \00000a A0";
+    position: absolute;
+    top: -54px;
+    left: 33PX;
+    color: #fff;
+    font-size: 10px;
+    text-align: left;
+    transform: rotateZ(-90deg);
+    white-space: pre-wrap;
+    line-height: 14px;
+}
+
+.analog.label {
+    width: 60px;
+    bottom: 35px;
+    left: 0;
+}
+
+.analog.label::after {
+    width: 24px;
+    right: -24px;
+    top: 0;
+}
+
+.led {
+    height: 10px;
+    width: 20px;
+    position: absolute;
+    right: 40px;
+    top: 100px;
+    border: 4px solid #ddd;
+    border-top: none;
+    border-bottom: none;
+    background: chartreuse;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%{
+        background: #555;
+        box-shadow: 0 0 transparent;
+    }
+    10%{
+        box-shadow: 0 0 transparent;
+    }
+    25%{
+        background: chartreuse;
+        box-shadow: 0 0 20px 1px chartreuse;
+
+    }
+    40%{
+        box-shadow: 0 0 transparent;
+    }
+    50%{
+        background: #555;
+        box-shadow: 0 0 transparent;
+    }
+    100%{
+        background: #555;
+        box-shadow: 0 0 transparent;
+    }
+
+}
+
+
+.credits {
+    width: 100%;
+    text-align: center;
+}
+
+
